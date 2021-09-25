@@ -1,17 +1,11 @@
-package com.guiyujin.weather.main;
-
-import android.content.Context;
+package com.guiyujin.miweather.main;
 
 
 import com.guiyujin.android_lib_base.base.BaseModel;
 import com.guiyujin.android_lib_base.base.BaseView;
 import com.guiyujin.android_lib_base.base.ICallBack;
 import com.guiyujin.android_lib_base.base.IPresenter;
-import com.guiyujin.android_lib_base.http.bean.BaseResponse;
-import com.guiyujin.android_lib_base.http.bean.weatherbean.condition.DataCondition;
-import com.guiyujin.android_lib_base.http.exception.NetworkException;
 
-import java.util.List;
 import java.util.Map;
 
 /**

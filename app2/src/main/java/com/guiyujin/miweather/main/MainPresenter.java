@@ -1,8 +1,6 @@
-package com.guiyujin.weather.main;
+package com.guiyujin.miweather.main;
 
 import com.guiyujin.android_lib_base.base.BasePresenter;
-import com.guiyujin.android_lib_base.http.bean.BaseResponse;
-import com.guiyujin.android_lib_base.http.bean.weatherbean.condition.DataCondition;
 
 import java.util.Map;
 

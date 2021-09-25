@@ -1,28 +1,16 @@
-package com.guiyujin.weather.main;
-
-import android.content.Context;
+package com.guiyujin.miweather.main;
 
 import com.guiyujin.android_lib_base.http.NetworkModule;
-import com.guiyujin.android_lib_base.http.bean.BaseResponse;
 import com.guiyujin.android_lib_base.http.bean.weatherbean.condition.DataCondition;
-import com.guiyujin.android_lib_base.http.exception.NetworkException;
 import com.guiyujin.android_lib_base.http.rx.RxResponseCompat;
 
-import java.io.IOException;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
-import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 
-import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Function;
-import io.reactivex.schedulers.Schedulers;
 
 /**
  * @ProjectName: PureNote_MVP

@@ -1,4 +1,4 @@
-package com.guiyujin.weather;
+package com.guiyujin.miweather;
 
 import android.view.LayoutInflater;
 import android.view.View;

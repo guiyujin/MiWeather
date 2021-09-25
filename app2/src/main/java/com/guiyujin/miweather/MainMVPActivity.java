@@ -1,4 +1,4 @@
-package com.guiyujin.weather;
+package com.guiyujin.miweather;
 
 import android.Manifest;
 import android.content.Context;
@@ -26,9 +26,9 @@ import com.guiyujin.android_lib_base.http.bean.weatherbean.hourlyforecast.Hourly
 import com.guiyujin.android_lib_base.http.bean.weatherbean.shortforecast.DataShortForecast;
 import com.guiyujin.android_lib_base.http.exception.NetworkException;
 import com.guiyujin.android_lib_base.utils.LocationUtils;
-import com.guiyujin.weather.main.MainModelConstract;
-import com.guiyujin.weather.main.MainModelImpl;
-import com.guiyujin.weather.main.MainPresenter;
+import com.guiyujin.miweather.main.MainModelConstract;
+import com.guiyujin.miweather.main.MainModelImpl;
+import com.guiyujin.miweather.main.MainPresenter;
 import com.tbruyelle.rxpermissions3.RxPermissions;
 
 import java.util.HashMap;
