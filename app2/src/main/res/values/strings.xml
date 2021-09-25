@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Weather</string>
+    <string name="app_name">Weather2</string>
 
     <string name="action_settings">设置</string>
     <string name="copy_right">气象数据来自墨迹天气</string>
