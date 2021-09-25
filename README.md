@@ -11,14 +11,18 @@
 网络框架：OKHttp+Retrofit+RxJava
 
 项目细节：
-​    SwipeRefreshLayout实现网络请求与加载 
 
-​    RecyclerView横向展示24小时天气预报
+- SwipeRefreshLayout实现网络请求与加载 
+
+- RecyclerView横向展示24小时天气预报
+
 
 其余：
-​    app模块仅使用单Acitivity开发、app2模块使用Acitivity+Fragment；
 
-​    TODO区域原本想实现生活指数都展示，无奈阿里云的墨迹天气api返回的结果以请求日期为json的key，动态变化，无法适配，故搁置；
+- app模块仅使用单Activity开发、app2模块使用Activity+Fragment；
+
+- TODO区域原本想实现生活指数的展示，无奈api返回的结果以请求日期为json的key，动态变化，无法适配，故搁置；
+
 
 ## 开发成果：
 
