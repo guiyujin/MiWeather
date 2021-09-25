@@ -11,7 +11,7 @@
 网络框架：OKHttp+Retrofit+RxJava
 
 项目细节：
-    SwipeRefreshLayout实现网络请求与加载
+    SwipeRefreshLayout实现网络请求与加载 
 
 ​    RecyclerView横向展示24小时天气预报
 
