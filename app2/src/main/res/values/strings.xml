@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Weather</string>
+
+    <string name="action_settings">设置</string>
+    <string name="copy_right">气象数据来自墨迹天气</string>
+    <string name="long_forecast">查看近15日天气</string>
+</resources>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:paddingBottom="30dp">
+
+
+    <TextView
+        android:id="@+id/tv_sun_rise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/feel"
+        android:textSize="12sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_sun_set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:textColor="@color/feel"
+        android:textSize="12sp"
+        android:gravity="center"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_sun_rise"
+        app:layout_constraintStart_toEndOf="@+id/tv_sun_rise" />
+
+    <TextView
+        android:id="@+id/tv_wind_level"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tv_humidity_number"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sun_rise" />
+
+    <TextView
+        android:id="@+id/tv_wind_dir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/feel_dis"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_wind_level"
+        app:layout_constraintTop_toBottomOf="@+id/tv_wind_level" />
+
+    <TextView
+        android:id="@+id/tv_humidity_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_wind_level"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/tv_wind_level"
+        app:layout_constraintRight_toLeftOf="@+id/tv_feel_temp" />
+
+    <TextView
+        android:id="@+id/tv_humidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="3dp"
+        android:textColor="@color/feel_dis"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_humidity_number"
+        app:layout_constraintTop_toBottomOf="@+id/tv_humidity_number" />
+
+    <TextView
+        android:id="@+id/tv_feel_temp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_wind_level"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/tv_humidity_number"
+        app:layout_constraintRight_toLeftOf="@+id/tv_pressure_number" />
+
+    <TextView
+        android:id="@+id/tv_feel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/feel_dis"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_feel_temp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_feel_temp" />
+
+    <TextView
+        android:id="@+id/tv_pressure_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_wind_level"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/tv_feel_temp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_pressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/feel_dis"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_pressure_number"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pressure_number" />
+</androidx.constraintlayout.widget.ConstraintLayout>

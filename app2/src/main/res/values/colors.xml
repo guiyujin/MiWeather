@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="biometricprompt_color_primary">#415FFF</color>
+    <color name="biometricprompt_color_ffffff">#ffffff</color>
+    <color name="biometricprompt_color_333333">#333333</color>
+    <color name="biometricprompt_color_82C785">#82C785</color>
+    <color name="biometricprompt_color_FF5555">#FF5555</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray">#99999999</color>
+    <color name="red">#FF0000</color>
+
+    <color name="add">#99CCFF</color>
+    <color name="time_set">#00CCFF</color>
+    <color name="btn">#99CCFF</color>
+
+    <color name="MiColorPrimary">#F7F7F7</color>
+    <color name="MiColorPrimaryDark">#F7F7F7</color>
+    <color name="MiSearch">#969696</color>
+    <color name="MiSelected">#EBEBEB</color>
+
+    <color name="translucent">#00000000</color>
+    <color name="colorPrimary">#518FDA</color>
+    <color name="colorPrimaryDark">#518FDA</color>
+
+    <color name="copyright">#B2C5DD</color>
+    <color name="index_background">#81B0E6</color>
+    <color name="btn_bg">#9AB1D3</color>
+
+    <color name="cloud">#6788BD</color>
+    <color name="sun">#518FDA</color>
+    <color name="feel">#F1F4F9</color>
+    <color name="feel_dis">#BBCAE3</color>
+</resources>

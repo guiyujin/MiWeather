@@ -1,0 +1,56 @@
+package com.guiyujin.weather.main;
+
+import android.content.Context;
+
+
+import com.guiyujin.android_lib_base.base.BaseModel;
+import com.guiyujin.android_lib_base.base.BaseView;
+import com.guiyujin.android_lib_base.base.ICallBack;
+import com.guiyujin.android_lib_base.base.IPresenter;
+import com.guiyujin.android_lib_base.http.bean.BaseResponse;
+import com.guiyujin.android_lib_base.http.bean.weatherbean.condition.DataCondition;
+import com.guiyujin.android_lib_base.http.exception.NetworkException;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * @ProjectName: PureNote_MVP
+ * @Package: com.guiyujin.purenote_mvp.model.main
+ * @ClassName: MainModelConstract
+ * @Description: java类作用描述
+ * @Author: 归余烬
+ * @CreateDate: 2021/9/7 14:23
+ * @UpdateUser: 更新者：
+ * @UpdateDate: 2021/9/7 14:23
+ * @UpdateRemark: 更新说明：
+ * @Version: 1.0
+ */
+public interface MainModelConstract {
+    interface MainCallBack<T> extends ICallBack {
+        void onSuccess(T response);
+    }
+
+    interface Model extends BaseModel {
+        void getCondition(String path, Map<String, String> bodys, MainCallBack mainCallBack);
+        void getAqi(String path, Map<String, String> bodys, MainCallBack mainCallBack);
+        void getShortForecast(String path, Map<String, String> bodys, MainCallBack mainCallBack);
+        void getLongForecast(String path, Map<String, String> bodys, MainCallBack mainCallBack);
+        void getHourlyForecast(String path, Map<String, String> bodys, MainCallBack mainCallBack);
+    }
+
+    interface View<T> extends BaseView {
+
+        void showCondition(T response);
+        void showAqi(T response);
+        void showShortForecast(T response);
+        void showLongForecast(T respons);
+        void showHourlyForecast(T respons);
+        void getNull();
+        void onFailed(Exception exception);
+    }
+
+    interface presenter extends IPresenter<View, Model> {
+        void getCondition(String[] path, Map<String, String> bodys);
+    }
+}

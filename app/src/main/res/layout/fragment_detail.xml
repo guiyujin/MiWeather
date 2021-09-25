@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_aqi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="120dp"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:visibility="invisible"
+        app:drawableStartCompat="@drawable/ic_action_grow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_short_forecast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="20dp"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:visibility="invisible"
+        app:drawableStartCompat="@drawable/ic_action_blob"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/long_forecast"
+        layout="@layout/layout_long_forecast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_aqi" />
+
+    <include
+        android:id="@+id/hourly"
+        layout="@layout/layout_hourly_forecast"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@id/long_forecast" />
+
+    <include
+        android:id="@+id/index"
+        layout="@layout/layout_index"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintTop_toBottomOf="@id/hourly" />
+
+    <TextView
+        android:id="@+id/tv_cl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/copy_right"
+        android:textColor="@color/copyright"
+        android:textSize="13sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/index"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
