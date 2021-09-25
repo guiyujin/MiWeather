@@ -55,7 +55,7 @@ public class DetailModelImpl implements DetailModelContract.Model{
 
     @Override
     public void getShortForecast(String path, Map<String, String> bodys, DetailModelContract.DetailCallBack detailCallBack) {
-        networkModule.providerNetworkService(networkModule.provideRetrofit()).postShortforecast(path, bodys)
+        networkModule.providerNetworkService(networkModule.provideRetrofit()).postShortForecast(path, bodys)
                 .compose(RxResponseCompat.exceptionTransformer())
                 .compose(RxResponseCompat.compat())
                 .subscribe(new Observer() {
@@ -83,7 +83,7 @@ public class DetailModelImpl implements DetailModelContract.Model{
 
     @Override
     public void getLongForecast(String path, Map<String, String> bodys, DetailModelContract.DetailCallBack detailCallBack) {
-        networkModule.providerNetworkService(networkModule.provideRetrofit()).postLongforecast(path, bodys)
+        networkModule.providerNetworkService(networkModule.provideRetrofit()).postLongForecast(path, bodys)
                 .compose(RxResponseCompat.exceptionTransformer())
                 .compose(RxResponseCompat.compat())
                 .subscribe(new Observer() {

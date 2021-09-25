@@ -30,11 +30,6 @@ final class CustomGsonResponseBodyConverter<T> implements Converter<ResponseBody
     public T convert(ResponseBody value) throws IOException {
         String response = value.string();
 
-//        BaseResponse httpStatus = gson.fromJson(response, BaseResponse.class);
-//        if (httpStatus.isCodeInvalid()) {
-//            value.close();
-//            throw new ApiException(httpStatus.getCode(), httpStatus.getMsg());
-//        }
         MediaType contentType = value.contentType();
         Charset charset = contentType != null ? contentType.charset(UTF_8) : UTF_8;
         InputStream inputStream = new ByteArrayInputStream(response.getBytes());

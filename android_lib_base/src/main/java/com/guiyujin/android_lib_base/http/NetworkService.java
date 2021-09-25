@@ -64,7 +64,7 @@ public interface NetworkService {
      */
     @POST("whapi/json/aliweather/{path}/")
     @FormUrlEncoded
-    Observable<BaseResponse<DataShortForecast>> postShortforecast(@Path("path") String url, @FieldMap Map<String, String> bodys);
+    Observable<BaseResponse<DataShortForecast>> postShortForecast(@Path("path") String url, @FieldMap Map<String, String> bodys);
 
     /**
      * 15天预报
@@ -73,5 +73,5 @@ public interface NetworkService {
      */
     @POST("whapi/json/aliweather/{path}/")
     @FormUrlEncoded
-    Observable<BaseResponse<DataLongForecast>> postLongforecast(@Path("path") String url, @FieldMap Map<String, String> bodys);
+    Observable<BaseResponse<DataLongForecast>> postLongForecast(@Path("path") String url, @FieldMap Map<String, String> bodys);
 }

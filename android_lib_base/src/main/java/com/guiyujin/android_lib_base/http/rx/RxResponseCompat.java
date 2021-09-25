@@ -70,26 +70,4 @@ public class RxResponseCompat {
         }
     }
 
-//    public static <T> ObservableTransformer<BaseResponse<T>, T> compat(){
-//        return new ObservableTransformer<BaseResponse<T>, T>() {
-//            @Override
-//            public ObservableSource<T> apply(Observable<BaseResponse<T>> upstream) {
-//                return upstream.map(new Function<BaseResponse<T>, T>() {
-//                    @Override
-//                    public T apply(@io.reactivex.annotations.NonNull BaseResponse<T> response) throws Exception {
-////                        if (response.isSuccess()) {
-////                            return (T) createData(response.getData());
-////                        } else {
-////                            return (T) Observable.error(new NetworkException(response.getCode(), response.getMsg()));
-//                        if (response.isSuccess()) {
-//                            return upstream.subscribeOn(Schedulers.io())
-//                                    .observeOn(AndroidSchedulers.mainThread());
-//                        } else {
-//                            return (T) Observable.error(new NetworkException(response.getCode(), response.getMsg()));
-//                        }
-//                    }
-//                });
-//            }
-//        };
-//    }
 }

@@ -113,48 +113,4 @@ public class ExceptionHandler {
 
     }
 
-    public interface APP_ERROR {
-        public static final int SUCC = 0;//	处理成功，无错误
-        public static final int INTERFACE_PROCESSING_TIMEOUT = 1;//	接口处理超时
-        public static final int INTERFACE_INTERNAL_ERROR = 2;//	接口内部错误
-        public static final int PARAMETERS_EMPTY = 3;//	必需的参数为空
-        public static final int AUTHENTICATION_FAILED = 4;//	鉴权失败，用户没有使用该项功能（服务）的权限。
-        public static final int PARAMETERS_ERROR = 5;//	参数错误
-        /**
-         * 企业激活码无效
-         */
-        int CODE_ACTIVECODE_INVALIDATE = 100201;
-        /**
-         * 激活码已被激活
-         */
-        int CODE_ACTIVECODE_ACTIVED = 100202;
-        /**
-         * 用户不存在
-         */
-        int CODE_USER_NOT_EXIST = 110401;
-        /**
-         * 用户被禁用
-         */
-        int CODE_USER_DISABLE = 110203;
-        /**
-         * 盒子号无效
-         */
-        int INVALIDATE_BOX_CODE = 110907;
-        /**
-         * 盒子号已绑定在当前企业下的其他车辆上
-         */
-        int BOX_BINDED_VEHICLE = 110908;
-        /**
-         * 验证码无效
-         */
-        int AUTH_CODE_INVALIDATE = 110801;
-        /**
-         * 企业可绑定盒子已达上限，请联系客服，升级权限
-         */
-        int BIND_BOX_LIMIT = 110802;
-        /**
-         * 授权车辆不允许修改此信息。
-         */
-        int VHEICLE_NOT_EDIT_CODE = 110904;
-    }
 }
