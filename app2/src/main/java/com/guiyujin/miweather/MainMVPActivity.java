@@ -208,6 +208,7 @@ public class MainMVPActivity extends BaseMVPActivity<MainPresenter, MainModelImp
     @Override
     public void disLoading() {
         swipeRefreshLayout.setRefreshing(false);
+        showToast("刷新成功");
     }
 
     @Override

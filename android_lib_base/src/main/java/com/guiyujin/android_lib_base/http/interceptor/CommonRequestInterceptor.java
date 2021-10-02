@@ -7,7 +7,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class CommonRequestInterceptor implements Interceptor {
-    private String appcode = "";
+    private String appcode = "ab11b8e3aa2c4920ad02c0b66fe9b908";
 
     @Override
     public Response intercept(Chain chain) throws IOException {
@@ -17,3 +17,5 @@ public class CommonRequestInterceptor implements Interceptor {
         return chain.proceed(builder.build());
     }
 }
+
+

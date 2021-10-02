@@ -25,9 +25,26 @@ public class MainPresenter  extends BasePresenter<MainModelConstract.View, MainM
         mModel.getCondition(path[0], bodys, new MainModelConstract.MainCallBack() {
             @Override
             public void onSuccess(Object response) {
-                mView.disLoading();
+//                mView.disLoading();
                 if (response != null){
                     mView.showCondition(response);
+                }else {
+                    mView.getNull();
+                }
+            }
+
+            @Override
+            public void onFailed(Exception e) {
+//                mView.disLoading();
+                mView.onFailed(e);
+            }
+        });
+        mModel.getAqi(path[1], bodys, new MainModelConstract.MainCallBack() {
+            @Override
+            public void onSuccess(Object response) {
+//                mView.disLoading();
+                if (response != null){
+                    mView.showAqi(response);
                 }else {
                     mView.getNull();
                 }
@@ -39,27 +56,10 @@ public class MainPresenter  extends BasePresenter<MainModelConstract.View, MainM
                 mView.onFailed(e);
             }
         });
-        mModel.getAqi(path[1], bodys, new MainModelConstract.MainCallBack() {
-            @Override
-            public void onSuccess(Object response) {
-                mView.disLoading();
-                if (response != null){
-                    mView.showAqi(response);
-                }else {
-                    mView.getNull();
-                }
-            }
-
-            @Override
-            public void onFailed(Exception e) {
-                mView.disLoading();
-//                mView.onFailed(e);
-            }
-        });
         mModel.getShortForecast(path[2], bodys, new MainModelConstract.MainCallBack() {
             @Override
             public void onSuccess(Object response) {
-                mView.disLoading();
+//                mView.disLoading();
                 if (response != null){
                     mView.showShortForecast(response);
                 }else {
@@ -69,14 +69,14 @@ public class MainPresenter  extends BasePresenter<MainModelConstract.View, MainM
 
             @Override
             public void onFailed(Exception e) {
-                mView.disLoading();
-//                mView.onFailed(e);
+//                mView.disLoading();
+                mView.onFailed(e);
             }
         });
         mModel.getLongForecast(path[3], bodys, new MainModelConstract.MainCallBack() {
             @Override
             public void onSuccess(Object response) {
-                mView.disLoading();
+//                mView.disLoading();
                 if (response != null){
                     mView.showLongForecast(response);
                 }else {
@@ -86,7 +86,7 @@ public class MainPresenter  extends BasePresenter<MainModelConstract.View, MainM
 
             @Override
             public void onFailed(Exception e) {
-                mView.disLoading();
+//                mView.disLoading();
                 mView.onFailed(e);
             }
         });

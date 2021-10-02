@@ -24,7 +24,7 @@ public class DetailModelPresenter extends BasePresenter<DetailModelContract.View
         mModel.getAqi(path[0], bodys, new DetailModelContract.DetailCallBack() {
             @Override
             public void onSuccess(Object response) {
-                mView.disLoading();
+//                mView.disLoading();
                 if (response != null){
                     mView.showAqi(response);
                 }else {
@@ -41,7 +41,7 @@ public class DetailModelPresenter extends BasePresenter<DetailModelContract.View
         mModel.getShortForecast(path[1], bodys, new DetailModelContract.DetailCallBack() {
             @Override
             public void onSuccess(Object response) {
-                mView.disLoading();
+//                mView.disLoading();
                 if (response != null){
                     mView.showShortForecast(response);
                 }else {
@@ -58,7 +58,7 @@ public class DetailModelPresenter extends BasePresenter<DetailModelContract.View
         mModel.getLongForecast(path[2], bodys, new DetailModelContract.DetailCallBack() {
             @Override
             public void onSuccess(Object response) {
-                mView.disLoading();
+//                mView.disLoading();
                 if (response != null){
                     mView.showLongForecast(response);
                 }else {
