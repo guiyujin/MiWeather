@@ -150,7 +150,7 @@
                     android:id="@+id/index"
                     layout="@layout/layout_index"
                     android:layout_width="match_parent"
-                    android:layout_height="250dp"
+                    android:layout_height="150dp"
                     android:layout_below="@id/feel"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="10dp"
@@ -172,7 +172,7 @@
                     android:layout_width="1dp"
                     android:layout_height="1dp"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="1400dp"/>
+                    android:layout_marginTop="1300dp"/>
 
             </RelativeLayout>
 
