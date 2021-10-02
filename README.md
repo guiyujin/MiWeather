@@ -6,16 +6,19 @@
 
 ## 项目说明
 
+提供基础的天气服务，功能包括:天气实况、空气质量指数、24小时预报、15天预报、日出日落
+
 架构：MVP
 
 网络框架：OKHttp+Retrofit+RxJava
 
 项目细节：
 
-- SwipeRefreshLayout实现网络请求与加载 
+- MVP架构实现项目解耦
+
+- SwipeRefreshLayout实现网络请求，观察者模式实现数据加载
 
 - RecyclerView横向展示24小时天气预报
-
 
 其余：
 
