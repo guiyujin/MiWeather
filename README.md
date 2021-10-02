@@ -19,9 +19,9 @@
 
 其余：
 
-- app模块仅使用单Activity开发、app2模块使用Activity+Fragment；
+- app2模块仅使用单Activity开发；
 
-- TODO区域原本想实现生活指数的展示，无奈api返回的结果以请求日期为json的key，动态变化，无法适配，故搁置；
+- 生活指数本来是动态适配的，无奈api返回的结果以请求日期为json的key，无法适配，故写死；
 
 
 ## 开发成果：
