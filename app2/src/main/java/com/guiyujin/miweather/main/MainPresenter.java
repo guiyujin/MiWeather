@@ -1,6 +1,6 @@
 package com.guiyujin.miweather.main;
 
-import com.guiyujin.android_lib_base.base.BasePresenter;
+import com.guiyujin.android_lib_base.base.mvp.BasePresenter;
 
 import java.util.Map;
 

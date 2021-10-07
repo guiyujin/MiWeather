@@ -1,8 +1,8 @@
-package com.guiyujin.android_lib_base.base;
+package com.guiyujin.android_lib_base.base.mvp;
 
 /**
  * @ProjectName: MVPDemo
- * @Package: com.guiyujin.mvpdemo.mvp
+ * @Package: com.guiyujin.android_lib_base.base
  * @ClassName: IPresenter
  * @Description: java类作用描述
  * @Author: 作者名

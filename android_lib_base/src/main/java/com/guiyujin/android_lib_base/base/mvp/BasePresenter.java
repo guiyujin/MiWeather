@@ -1,4 +1,4 @@
-package com.guiyujin.android_lib_base.base;
+package com.guiyujin.android_lib_base.base.mvp;
 
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
@@ -7,7 +7,7 @@ import androidx.lifecycle.OnLifecycleEvent;
 
 /**
  * @ProjectName: MVPDemo
- * @Package: com.guiyujin.mvpdemo.base
+ * @Package: com.guiyujin.android_lib_base.base
  * @ClassName: BasePresenter
  * @Description: java类作用描述
  * @Author: 归余烬

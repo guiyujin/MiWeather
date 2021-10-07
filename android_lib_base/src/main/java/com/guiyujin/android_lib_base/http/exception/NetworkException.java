@@ -17,17 +17,15 @@ public class NetworkException extends BaseException {
         super(mErrorCode, mErrorMsg);
     }
 
-    @Override
+
     public int getmErrorCode() {
         return this.mErrorCode;
     }
 
-    @Override
     public String getmErrorMsg() {
         return this.mErrorMsg;
     }
 
-    @Override
     public void setmErrorMsg(String mErrorMsg) {
         this.mErrorMsg = mErrorMsg;
     }

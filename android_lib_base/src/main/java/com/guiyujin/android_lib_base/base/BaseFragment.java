@@ -2,7 +2,6 @@ package com.guiyujin.android_lib_base.base;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,33 +11,27 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 /**
- * @ProjectName: MiWeather
+ * @ProjectName: AndroidLibBase
  * @Package: com.guiyujin.android_lib_base.base
- * @ClassName: BaseMVPFragment
+ * @ClassName: BaseFragment
  * @Description: java类作用描述
  * @Author: 归余烬
- * @CreateDate: 2021/9/25 10:01
+ * @CreateDate: 2021/10/5 11:20
  * @UpdateUser: 更新者：
- * @UpdateDate: 2021/9/25 10:01
+ * @UpdateDate: 2021/10/5 11:20
  * @UpdateRemark: 更新说明：
  * @Version: 1.0
  */
-public abstract class BaseMVPFragment<T extends BasePresenter, E extends BaseModel> extends Fragment implements View.OnClickListener {
-    protected T presenter;
-    protected E model;
+public abstract class BaseFragment extends Fragment implements View.OnClickListener {
     private ViewGroup rootView;
     protected Context mContext;
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        presenter = initPresenter();
-        model = initModel();
         mContext = getActivity();
     }
-
 
     @Nullable
     @Override
@@ -50,9 +43,6 @@ public abstract class BaseMVPFragment<T extends BasePresenter, E extends BaseMod
         initListener();
         return rootView;
     }
-
-    protected abstract T initPresenter();
-    protected abstract E initModel();
 
     /**
      * 设置布局资源id
@@ -67,11 +57,10 @@ public abstract class BaseMVPFragment<T extends BasePresenter, E extends BaseMod
      * @param view
      */
     protected void initView(View view) {
-
     }
 
     /**
-     * 初始化事件
+     * 初始化事件监听
      */
     protected void initListener() {
 

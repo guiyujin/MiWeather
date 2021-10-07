@@ -17,6 +17,12 @@ public class BaseException extends Exception{
     private int mErrorCode;
     private String mErrorMsg;
 
+    public BaseException(Throwable throwable, int mErrorCode, String mErrorMsg){
+        super(throwable);
+        this.mErrorCode = mErrorCode;
+        this.mErrorMsg = mErrorMsg;
+    }
+
     public BaseException(Throwable throwable, String mErrorMsg){
         super(throwable);
         this.mErrorMsg = mErrorMsg;
@@ -27,19 +33,5 @@ public class BaseException extends Exception{
         this.mErrorMsg = mErrorMsg;
     }
 
-    public int getmErrorCode() {
-        return mErrorCode;
-    }
 
-    public void setmErrorCode(int mErrorCode) {
-        this.mErrorCode = mErrorCode;
-    }
-
-    public String getmErrorMsg() {
-        return mErrorMsg;
-    }
-
-    public void setmErrorMsg(String mErrorMsg) {
-        this.mErrorMsg = mErrorMsg;
-    }
 }

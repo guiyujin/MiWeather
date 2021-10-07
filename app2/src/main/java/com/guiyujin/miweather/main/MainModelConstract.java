@@ -1,10 +1,10 @@
 package com.guiyujin.miweather.main;
 
 
-import com.guiyujin.android_lib_base.base.BaseModel;
-import com.guiyujin.android_lib_base.base.BaseView;
 import com.guiyujin.android_lib_base.base.ICallBack;
-import com.guiyujin.android_lib_base.base.IPresenter;
+import com.guiyujin.android_lib_base.base.mvp.BaseModel;
+import com.guiyujin.android_lib_base.base.mvp.BaseView;
+import com.guiyujin.android_lib_base.base.mvp.IPresenter;
 
 import java.util.Map;
 
@@ -34,12 +34,11 @@ public interface MainModelConstract {
     }
 
     interface View<T> extends BaseView {
-
         void showCondition(T response);
         void showAqi(T response);
         void showShortForecast(T response);
-        void showLongForecast(T respons);
-        void showHourlyForecast(T respons);
+        void showLongForecast(T response);
+        void showHourlyForecast(T response);
         void getNull();
         void onFailed(Exception exception);
     }

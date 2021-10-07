@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.guiyujin.android_lib_base.base.BaseMVPActivity;
+import com.guiyujin.android_lib_base.base.mvp.BaseMVPActivity;
 import com.guiyujin.android_lib_base.http.bean.weatherbean.aqi.DataAqi;
 import com.guiyujin.android_lib_base.http.bean.weatherbean.condition.DataCondition;
 import com.guiyujin.android_lib_base.http.bean.weatherbean.longforecast.DataLongForecast;
@@ -50,6 +50,7 @@ public class MainMVPActivity extends BaseMVPActivity<MainPresenter, MainModelImp
     private RecyclerView recyclerView;
     private List<Hourly> hourlies;
     private Location location;
+
     Map<String, String> bodys = new HashMap<>();
     public static final String[] permissions = new String[]{
             Manifest.permission.ACCESS_COARSE_LOCATION,
@@ -66,6 +67,11 @@ public class MainMVPActivity extends BaseMVPActivity<MainPresenter, MainModelImp
     }
 
     @Override
+    protected void initParams(Bundle params) {
+
+    }
+
+    @Override
     protected MainPresenter initPresenter() {
         return new MainPresenter();
     }
@@ -75,10 +81,6 @@ public class MainMVPActivity extends BaseMVPActivity<MainPresenter, MainModelImp
         return new MainModelImpl();
     }
 
-    @Override
-    public void initParms(Bundle parms) {
-
-    }
 
     @Override
     public View bindView() {
@@ -168,10 +170,6 @@ public class MainMVPActivity extends BaseMVPActivity<MainPresenter, MainModelImp
 
     }
 
-    @Override
-    public void checkPermission() {
-
-    }
 
     public void getWeather() {
         RxPermissions rxPermissions = new RxPermissions(MainMVPActivity.this);
@@ -213,6 +211,8 @@ public class MainMVPActivity extends BaseMVPActivity<MainPresenter, MainModelImp
 
     @Override
     public void showCondition(Object response) {
+
+
         DataCondition condition = (DataCondition) response;
         tv_title.setText(condition.getCity().getPname() + " " + condition.getCity().getName());
         String cond = condition.getCondition().getCondition();
@@ -289,8 +289,8 @@ public class MainMVPActivity extends BaseMVPActivity<MainPresenter, MainModelImp
     }
 
     @Override
-    public void showLongForecast(Object respons) {
-        DataLongForecast longForecast = (DataLongForecast) respons;
+    public void showLongForecast(Object response) {
+        DataLongForecast longForecast = (DataLongForecast) response;
         tv_today.setText("今天 · " + longForecast.getForecast().get(1).getConditionDay());
         tv_today_temp.setText(longForecast.getForecast().get(1).getTempDay() + "℃ / " + longForecast.getForecast().get(1).getTempNight() + "℃");
         tv_tomorrow.setText("明天 · " + longForecast.getForecast().get(2).getConditionDay());
@@ -301,8 +301,8 @@ public class MainMVPActivity extends BaseMVPActivity<MainPresenter, MainModelImp
     }
 
     @Override
-    public void showHourlyForecast(Object respons) {
-        DataHourlyForecast dataHourlyForecast = (DataHourlyForecast) respons;
+    public void showHourlyForecast(Object response) {
+        DataHourlyForecast dataHourlyForecast = (DataHourlyForecast) response;
         hourlies = dataHourlyForecast.getHourly();
         myAdapter.setHourly(hourlies);
         recyclerView.setAdapter(myAdapter);

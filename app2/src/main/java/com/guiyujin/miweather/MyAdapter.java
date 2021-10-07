@@ -44,7 +44,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull @io.reactivex.annotations.NonNull MyViewHolder holder, int position) {
         holder.tv_item_time.setText(hourly.get(position).getHour() + ":00");
-        holder.tv_item_temp.setText(hourly.get(position).getTemp());
+        holder.tv_item_temp.setText(hourly.get(position).getTemp() + "℃");
         holder.tv_item_condition.setText(hourly.get(position).getCondition());
         holder.tv_item_wind.setText(hourly.get(position).getWindlevel() + "级");
     }
