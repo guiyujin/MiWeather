@@ -26,7 +26,7 @@ import com.guiyujin.android_lib_base.http.bean.weatherbean.hourlyforecast.Hourly
 import com.guiyujin.android_lib_base.http.bean.weatherbean.shortforecast.DataShortForecast;
 import com.guiyujin.android_lib_base.http.exception.NetworkException;
 import com.guiyujin.android_lib_base.utils.LocationUtils;
-import com.guiyujin.miweather.main.MainModelConstract;
+import com.guiyujin.miweather.main.MainModelContract;
 import com.guiyujin.miweather.main.MainModelImpl;
 import com.guiyujin.miweather.main.MainPresenter;
 import com.tbruyelle.rxpermissions3.RxPermissions;
@@ -38,7 +38,7 @@ import java.util.Map;
 import io.reactivex.rxjava3.functions.Consumer;
 
 
-public class MainMVPActivity extends BaseMVPActivity<MainPresenter, MainModelImpl> implements MainModelConstract.View {
+public class MainMVPActivity extends BaseMVPActivity<MainPresenter, MainModelImpl> implements MainModelContract.View {
     private ConstraintLayout constraintLayout;
     private TextView tv_title, tv_temp, tv_label, tv_condition, tv_aqi, tv_short_forecast, tv_cl;
     private TextView tv_sun_rise, tv_sun_set, tv_wind_level, tv_wind_dir, tv_humidity_number, tv_humidity, tv_feel_temp, tv_feel, tv_pressure_number, tv_pressure;
@@ -63,7 +63,6 @@ public class MainMVPActivity extends BaseMVPActivity<MainPresenter, MainModelImp
         super.onCreate(savedInstanceState);
 
         presenter.attach(this, model);
-
     }
 
     @Override
@@ -135,7 +134,6 @@ public class MainMVPActivity extends BaseMVPActivity<MainPresenter, MainModelImp
 
         initToolBar(R.id.toolbar_main, "");
         setMenuRes(R.menu.menu_main);
-
     }
 
     @Override
@@ -152,7 +150,6 @@ public class MainMVPActivity extends BaseMVPActivity<MainPresenter, MainModelImp
             }
         };
         swipeRefreshLayout.setOnRefreshListener(onRefreshListener);
-
     }
 
     @Override

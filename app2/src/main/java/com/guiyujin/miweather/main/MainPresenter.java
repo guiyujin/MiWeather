@@ -16,13 +16,13 @@ import java.util.Map;
  * @UpdateRemark: 更新说明：
  * @Version: 1.0
  */
-public class MainPresenter  extends BasePresenter<MainModelConstract.View, MainModelConstract.Model> implements MainModelConstract.presenter{
+public class MainPresenter  extends BasePresenter<MainModelContract.View, MainModelContract.Model> implements MainModelContract.presenter{
 
 
     @Override
     public void getCondition(String[] path, Map<String, String> bodys) {
         mView.onLoading();
-        mModel.getCondition(path[0], bodys, new MainModelConstract.MainCallBack() {
+        mModel.getCondition(path[0], bodys, new MainModelContract.MainCallBack() {
             @Override
             public void onSuccess(Object response) {
 //                mView.disLoading();
@@ -39,7 +39,7 @@ public class MainPresenter  extends BasePresenter<MainModelConstract.View, MainM
                 mView.onFailed(e);
             }
         });
-        mModel.getAqi(path[1], bodys, new MainModelConstract.MainCallBack() {
+        mModel.getAqi(path[1], bodys, new MainModelContract.MainCallBack() {
             @Override
             public void onSuccess(Object response) {
 //                mView.disLoading();
@@ -56,7 +56,7 @@ public class MainPresenter  extends BasePresenter<MainModelConstract.View, MainM
                 mView.onFailed(e);
             }
         });
-        mModel.getShortForecast(path[2], bodys, new MainModelConstract.MainCallBack() {
+        mModel.getShortForecast(path[2], bodys, new MainModelContract.MainCallBack() {
             @Override
             public void onSuccess(Object response) {
 //                mView.disLoading();
@@ -73,7 +73,7 @@ public class MainPresenter  extends BasePresenter<MainModelConstract.View, MainM
                 mView.onFailed(e);
             }
         });
-        mModel.getLongForecast(path[3], bodys, new MainModelConstract.MainCallBack() {
+        mModel.getLongForecast(path[3], bodys, new MainModelContract.MainCallBack() {
             @Override
             public void onSuccess(Object response) {
 //                mView.disLoading();
@@ -90,7 +90,7 @@ public class MainPresenter  extends BasePresenter<MainModelConstract.View, MainM
                 mView.onFailed(e);
             }
         });
-        mModel.getHourlyForecast(path[4], bodys, new MainModelConstract.MainCallBack() {
+        mModel.getHourlyForecast(path[4], bodys, new MainModelContract.MainCallBack() {
             @Override
             public void onSuccess(Object response) {
                 mView.disLoading();

@@ -24,7 +24,7 @@ import io.reactivex.disposables.Disposable;
  * @UpdateRemark: 更新说明：
  * @Version: 1.0
  */
-public class MainModelImpl implements MainModelConstract.Model{
+public class MainModelImpl implements MainModelContract.Model{
     private NetworkModule networkModule = new NetworkModule();
     // 可重试次数
     private int maxConnectCount = 3;
@@ -35,7 +35,7 @@ public class MainModelImpl implements MainModelConstract.Model{
     private List<Object> response;
 
     @Override
-    public void getCondition(String path, Map<String, String> bodys, MainModelConstract.MainCallBack mainCallBack) {
+    public void getCondition(String path, Map<String, String> bodys, MainModelContract.MainCallBack mainCallBack) {
         networkModule.providerNetworkService(networkModule.provideRetrofit()).postCondition(path, bodys)
                 .compose(RxResponseCompat.exceptionTransformer())
                 .compose(RxResponseCompat.compat())
@@ -64,7 +64,7 @@ public class MainModelImpl implements MainModelConstract.Model{
     }
 
     @Override
-    public void getAqi(String path, Map<String, String> bodys, MainModelConstract.MainCallBack mainCallBack) {
+    public void getAqi(String path, Map<String, String> bodys, MainModelContract.MainCallBack mainCallBack) {
         networkModule.providerNetworkService(networkModule.provideRetrofit()).postAqi(path, bodys)
                 .compose(RxResponseCompat.exceptionTransformer())
                 .compose(RxResponseCompat.compat())
@@ -92,7 +92,7 @@ public class MainModelImpl implements MainModelConstract.Model{
     }
 
     @Override
-    public void getShortForecast(String path, Map<String, String> bodys, MainModelConstract.MainCallBack mainCallBack) {
+    public void getShortForecast(String path, Map<String, String> bodys, MainModelContract.MainCallBack mainCallBack) {
         networkModule.providerNetworkService(networkModule.provideRetrofit()).postShortForecast(path, bodys)
                 .compose(RxResponseCompat.exceptionTransformer())
                 .compose(RxResponseCompat.compat())
@@ -120,7 +120,7 @@ public class MainModelImpl implements MainModelConstract.Model{
     }
 
     @Override
-    public void getLongForecast(String path, Map<String, String> bodys, MainModelConstract.MainCallBack mainCallBack) {
+    public void getLongForecast(String path, Map<String, String> bodys, MainModelContract.MainCallBack mainCallBack) {
         networkModule.providerNetworkService(networkModule.provideRetrofit()).postLongForecast(path, bodys)
                 .compose(RxResponseCompat.exceptionTransformer())
                 .compose(RxResponseCompat.compat())
@@ -148,7 +148,7 @@ public class MainModelImpl implements MainModelConstract.Model{
     }
 
     @Override
-    public void getHourlyForecast(String path, Map<String, String> bodys, MainModelConstract.MainCallBack mainCallBack) {
+    public void getHourlyForecast(String path, Map<String, String> bodys, MainModelContract.MainCallBack mainCallBack) {
         networkModule.providerNetworkService(networkModule.provideRetrofit()).postForecast24Hours(path, bodys)
                 .compose(RxResponseCompat.exceptionTransformer())
                 .compose(RxResponseCompat.compat())

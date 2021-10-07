@@ -20,7 +20,7 @@ import java.util.Map;
  * @UpdateRemark: 更新说明：
  * @Version: 1.0
  */
-public interface MainModelConstract {
+public interface MainModelContract {
     interface MainCallBack<T> extends ICallBack {
         void onSuccess(T response);
     }
@@ -43,7 +43,7 @@ public interface MainModelConstract {
         void onFailed(Exception exception);
     }
 
-    interface presenter extends IPresenter<View, Model> {
+    interface presenter{
         void getCondition(String[] path, Map<String, String> bodys);
     }
 }
