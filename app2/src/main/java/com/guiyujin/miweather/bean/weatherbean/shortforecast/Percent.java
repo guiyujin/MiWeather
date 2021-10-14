@@ -1,16 +1,19 @@
-package com.guiyujin.android_lib_base.http.bean.weatherbean.shortforecast;
+package com.guiyujin.miweather.bean.weatherbean.shortforecast;
 
-/**
- * Auto-generated: 2021-09-03 15:11:31
- *
- * @author json.cn (i@json.cn)
- * @website http://www.json.cn/java2pojo/
- */
+
 public class Percent {
 
+    private int dbz;
     private String desc;
     private int icon;
-    private int percent;
+    private double percent;
+    public void setDbz(int dbz) {
+        this.dbz = dbz;
+    }
+    public int getDbz() {
+        return dbz;
+    }
+
     public void setDesc(String desc) {
         this.desc = desc;
     }
@@ -25,10 +28,10 @@ public class Percent {
         return icon;
     }
 
-    public void setPercent(int percent) {
+    public void setPercent(double percent) {
         this.percent = percent;
     }
-    public int getPercent() {
+    public double getPercent() {
         return percent;
     }
 

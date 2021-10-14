@@ -1,7 +1,7 @@
-package com.guiyujin.android_lib_base.http.bean.weatherbean.aqi;
+package com.guiyujin.miweather.bean.weatherbean.aqi;
 
 
-import com.guiyujin.android_lib_base.http.bean.weatherbean.City;
+import com.guiyujin.miweather.bean.weatherbean.City;
 
 /**
  * Auto-generated: 2021-09-03 15:1:25

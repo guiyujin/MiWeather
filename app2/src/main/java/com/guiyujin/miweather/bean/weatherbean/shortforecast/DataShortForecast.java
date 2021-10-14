@@ -1,7 +1,7 @@
-package com.guiyujin.android_lib_base.http.bean.weatherbean.shortforecast;
+package com.guiyujin.miweather.bean.weatherbean.shortforecast;
 
 
-import com.guiyujin.android_lib_base.http.bean.weatherbean.City;
+import com.guiyujin.miweather.bean.weatherbean.City;
 
 public class DataShortForecast {
 

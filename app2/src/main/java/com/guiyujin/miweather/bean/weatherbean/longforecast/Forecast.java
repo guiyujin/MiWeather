@@ -1,4 +1,4 @@
-package com.guiyujin.android_lib_base.http.bean.weatherbean.longforecast;
+package com.guiyujin.miweather.bean.weatherbean.longforecast;
 
 
 import java.util.Date;

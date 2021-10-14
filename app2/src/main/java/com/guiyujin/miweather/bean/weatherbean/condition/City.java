@@ -1,4 +1,4 @@
-package com.guiyujin.android_lib_base.http.bean.weatherbean.condition;
+package com.guiyujin.miweather.bean.weatherbean.condition;
 
 
 public class City {

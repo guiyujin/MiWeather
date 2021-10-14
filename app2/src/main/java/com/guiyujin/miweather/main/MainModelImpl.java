@@ -1,8 +1,9 @@
 package com.guiyujin.miweather.main;
 
 import com.guiyujin.android_lib_base.http.NetworkModule;
-import com.guiyujin.android_lib_base.http.bean.weatherbean.condition.DataCondition;
 import com.guiyujin.android_lib_base.http.rx.RxResponseCompat;
+import com.guiyujin.miweather.bean.weatherbean.condition.DataCondition;
+import com.guiyujin.miweather.network.NetworkService;
 
 import java.util.List;
 import java.util.Map;
@@ -26,6 +27,7 @@ import io.reactivex.disposables.Disposable;
  */
 public class MainModelImpl implements MainModelContract.Model{
     private NetworkModule networkModule = new NetworkModule();
+
     // 可重试次数
     private int maxConnectCount = 3;
     // 当前已重试次数
@@ -35,8 +37,9 @@ public class MainModelImpl implements MainModelContract.Model{
     private List<Object> response;
 
     @Override
-    public void getCondition(String path, Map<String, String> bodys, MainModelContract.MainCallBack mainCallBack) {
-        networkModule.providerNetworkService(networkModule.provideRetrofit()).postCondition(path, bodys)
+    public void getCondition(String path, Map<String, String> bodys, MainModelContract.MainCallBack mainCallBack) throws Exception {
+        networkModule.setBaseUrl("https://aliv8.mojicb.com/");
+        networkModule.provide(NetworkService.class).postCondition(path, bodys)
                 .compose(RxResponseCompat.exceptionTransformer())
                 .compose(RxResponseCompat.compat())
                 .subscribe(new Observer<DataCondition>() {
@@ -64,8 +67,8 @@ public class MainModelImpl implements MainModelContract.Model{
     }
 
     @Override
-    public void getAqi(String path, Map<String, String> bodys, MainModelContract.MainCallBack mainCallBack) {
-        networkModule.providerNetworkService(networkModule.provideRetrofit()).postAqi(path, bodys)
+    public void getAqi(String path, Map<String, String> bodys, MainModelContract.MainCallBack mainCallBack) throws Exception {
+        networkModule.provide(NetworkService.class).postAqi(path, bodys)
                 .compose(RxResponseCompat.exceptionTransformer())
                 .compose(RxResponseCompat.compat())
                 .subscribe(new Observer() {
@@ -92,8 +95,8 @@ public class MainModelImpl implements MainModelContract.Model{
     }
 
     @Override
-    public void getShortForecast(String path, Map<String, String> bodys, MainModelContract.MainCallBack mainCallBack) {
-        networkModule.providerNetworkService(networkModule.provideRetrofit()).postShortForecast(path, bodys)
+    public void getShortForecast(String path, Map<String, String> bodys, MainModelContract.MainCallBack mainCallBack) throws Exception {
+        networkModule.provide(NetworkService.class).postShortForecast(path, bodys)
                 .compose(RxResponseCompat.exceptionTransformer())
                 .compose(RxResponseCompat.compat())
                 .subscribe(new Observer() {
@@ -120,8 +123,8 @@ public class MainModelImpl implements MainModelContract.Model{
     }
 
     @Override
-    public void getLongForecast(String path, Map<String, String> bodys, MainModelContract.MainCallBack mainCallBack) {
-        networkModule.providerNetworkService(networkModule.provideRetrofit()).postLongForecast(path, bodys)
+    public void getLongForecast(String path, Map<String, String> bodys, MainModelContract.MainCallBack mainCallBack) throws Exception {
+        networkModule.provide(NetworkService.class).postLongForecast(path, bodys)
                 .compose(RxResponseCompat.exceptionTransformer())
                 .compose(RxResponseCompat.compat())
                 .subscribe(new Observer() {
@@ -148,8 +151,8 @@ public class MainModelImpl implements MainModelContract.Model{
     }
 
     @Override
-    public void getHourlyForecast(String path, Map<String, String> bodys, MainModelContract.MainCallBack mainCallBack) {
-        networkModule.providerNetworkService(networkModule.provideRetrofit()).postForecast24Hours(path, bodys)
+    public void getHourlyForecast(String path, Map<String, String> bodys, MainModelContract.MainCallBack mainCallBack) throws Exception {
+        networkModule.provide(NetworkService.class).postForecast24Hours(path, bodys)
                 .compose(RxResponseCompat.exceptionTransformer())
                 .compose(RxResponseCompat.compat())
                 .subscribe(new Observer() {

@@ -1,14 +1,15 @@
-package com.guiyujin.android_lib_base.http;
+package com.guiyujin.miweather.network;
 
 
 
 import com.guiyujin.android_lib_base.http.bean.BaseResponse;
-import com.guiyujin.android_lib_base.http.bean.weatherbean.alert.DataAlert;
-import com.guiyujin.android_lib_base.http.bean.weatherbean.aqi.DataAqi;
-import com.guiyujin.android_lib_base.http.bean.weatherbean.condition.DataCondition;
-import com.guiyujin.android_lib_base.http.bean.weatherbean.hourlyforecast.DataHourlyForecast;
-import com.guiyujin.android_lib_base.http.bean.weatherbean.longforecast.DataLongForecast;
-import com.guiyujin.android_lib_base.http.bean.weatherbean.shortforecast.DataShortForecast;
+import com.guiyujin.miweather.bean.weatherbean.alert.DataAlert;
+import com.guiyujin.miweather.bean.weatherbean.aqi.DataAqi;
+import com.guiyujin.miweather.bean.weatherbean.condition.DataCondition;
+import com.guiyujin.miweather.bean.weatherbean.hourlyforecast.DataHourlyForecast;
+import com.guiyujin.miweather.bean.weatherbean.longforecast.DataLongForecast;
+import com.guiyujin.miweather.bean.weatherbean.shortforecast.DataShortForecast;
+
 
 import java.util.Map;
 

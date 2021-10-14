@@ -8,7 +8,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.guiyujin.android_lib_base.http.bean.weatherbean.hourlyforecast.Hourly;
+
+import com.guiyujin.miweather.bean.weatherbean.hourlyforecast.Hourly;
 
 import java.util.ArrayList;
 import java.util.List;

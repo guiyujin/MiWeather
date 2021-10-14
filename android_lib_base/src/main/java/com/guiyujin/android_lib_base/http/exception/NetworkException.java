@@ -36,6 +36,6 @@ public class NetworkException extends BaseException {
      * @return 失效返回true, 否则返回false;
      */
     public boolean isTokenExpried() {
-        return mErrorCode == NetworkConstants.TOKEN_EXPRIED;
+        return mErrorCode == NetworkConstants.TOKEN_EXPIRED;
     }
 }

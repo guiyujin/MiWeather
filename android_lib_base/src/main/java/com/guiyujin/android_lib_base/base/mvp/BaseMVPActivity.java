@@ -1,6 +1,7 @@
 package com.guiyujin.android_lib_base.base.mvp;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -30,6 +31,13 @@ public abstract class BaseMVPActivity <T extends BasePresenter, E extends BaseMo
         presenter = initPresenter();
         model = initModel();
 
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        Log.i("ONRESULTSSS", "ONSTOP");
     }
 
     protected abstract T initPresenter();

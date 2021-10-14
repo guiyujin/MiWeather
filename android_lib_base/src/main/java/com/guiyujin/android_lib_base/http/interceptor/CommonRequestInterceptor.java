@@ -7,10 +7,19 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class CommonRequestInterceptor implements Interceptor {
-    private String appcode = "ab11b8e3aa2c4920ad02c0b66fe9b908";
+    private StringBuffer appcode;
+
+    public void setAppcode(String code) {
+        appcode.setLength(0);
+        appcode.append(code);
+    }
+
 
     @Override
     public Response intercept(Chain chain) throws IOException {
+        if (appcode == null){
+            setAppcode("ab11b8e3aa2c4920ad02c0b66fe9b908");
+        }
         Request.Builder builder = chain.request().newBuilder();
         builder.addHeader("Authorization","APPCODE " + appcode);
         builder.addHeader("Content-Type","application/x-www-form-urlencoded; charset=UTF-8");

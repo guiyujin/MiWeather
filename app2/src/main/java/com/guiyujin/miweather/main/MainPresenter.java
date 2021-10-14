@@ -20,7 +20,7 @@ public class MainPresenter  extends BasePresenter<MainModelContract.View, MainMo
 
 
     @Override
-    public void getCondition(String[] path, Map<String, String> bodys) {
+    public void getCondition(String[] path, Map<String, String> bodys) throws Exception {
         mView.onLoading();
         mModel.getCondition(path[0], bodys, new MainModelContract.MainCallBack() {
             @Override

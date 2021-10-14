@@ -1,9 +1,9 @@
-package com.guiyujin.android_lib_base.http.bean.weatherbean.alert;
+package com.guiyujin.miweather.bean.weatherbean.alert;
 
 
 
 
-import com.guiyujin.android_lib_base.http.bean.weatherbean.City;
+import com.guiyujin.miweather.bean.weatherbean.City;
 
 import java.util.List;
 

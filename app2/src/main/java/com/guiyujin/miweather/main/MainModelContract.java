@@ -26,11 +26,11 @@ public interface MainModelContract {
     }
 
     interface Model extends BaseModel {
-        void getCondition(String path, Map<String, String> bodys, MainCallBack mainCallBack);
-        void getAqi(String path, Map<String, String> bodys, MainCallBack mainCallBack);
-        void getShortForecast(String path, Map<String, String> bodys, MainCallBack mainCallBack);
-        void getLongForecast(String path, Map<String, String> bodys, MainCallBack mainCallBack);
-        void getHourlyForecast(String path, Map<String, String> bodys, MainCallBack mainCallBack);
+        void getCondition(String path, Map<String, String> bodys, MainCallBack mainCallBack) throws Exception;
+        void getAqi(String path, Map<String, String> bodys, MainCallBack mainCallBack) throws Exception;
+        void getShortForecast(String path, Map<String, String> bodys, MainCallBack mainCallBack) throws Exception;
+        void getLongForecast(String path, Map<String, String> bodys, MainCallBack mainCallBack) throws Exception;
+        void getHourlyForecast(String path, Map<String, String> bodys, MainCallBack mainCallBack) throws Exception;
     }
 
     interface View<T> extends BaseView {
@@ -44,6 +44,6 @@ public interface MainModelContract {
     }
 
     interface presenter{
-        void getCondition(String[] path, Map<String, String> bodys);
+        void getCondition(String[] path, Map<String, String> bodys) throws Exception;
     }
 }

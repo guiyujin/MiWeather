@@ -1,37 +1,26 @@
-package com.guiyujin.android_lib_base.http.bean.weatherbean.hourlyforecast;
-
+package com.guiyujin.miweather.bean.weatherbean.condition;
 import java.util.Date;
 
 
-import java.util.Date;
-
-/**
- * Auto-generated: 2021-09-24 12:42:7
- *
- * @author json.cn (i@json.cn)
- * @website http://www.json.cn/java2pojo/
- */
-public class Hourly {
+public class Condition<T> {
 
     private String condition;
     private String conditionId;
-    private Date date;
-    private String hour;
     private String humidity;
-    private String iconDay;
-    private String iconNight;
-    private String pop;
+    private String icon;
     private String pressure;
-    private String qpf;
     private String realFeel;
-    private String snow;
+    private Date sunRise;
+    private Date sunSet;
     private String temp;
+    private String tips;
     private Date updatetime;
     private String uvi;
+    private String vis;
     private String windDegrees;
     private String windDir;
+    private String windLevel;
     private String windSpeed;
-    private String windlevel;
     public void setCondition(String condition) {
         this.condition = condition;
     }
@@ -46,20 +35,6 @@ public class Hourly {
         return conditionId;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
-    public Date getDate() {
-        return date;
-    }
-
-    public void setHour(String hour) {
-        this.hour = hour;
-    }
-    public String getHour() {
-        return hour;
-    }
-
     public void setHumidity(String humidity) {
         this.humidity = humidity;
     }
@@ -67,25 +42,11 @@ public class Hourly {
         return humidity;
     }
 
-    public void setIconDay(String iconDay) {
-        this.iconDay = iconDay;
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
-    public String getIconDay() {
-        return iconDay;
-    }
-
-    public void setIconNight(String iconNight) {
-        this.iconNight = iconNight;
-    }
-    public String getIconNight() {
-        return iconNight;
-    }
-
-    public void setPop(String pop) {
-        this.pop = pop;
-    }
-    public String getPop() {
-        return pop;
+    public String getIcon() {
+        return icon;
     }
 
     public void setPressure(String pressure) {
@@ -95,13 +56,6 @@ public class Hourly {
         return pressure;
     }
 
-    public void setQpf(String qpf) {
-        this.qpf = qpf;
-    }
-    public String getQpf() {
-        return qpf;
-    }
-
     public void setRealFeel(String realFeel) {
         this.realFeel = realFeel;
     }
@@ -109,11 +63,18 @@ public class Hourly {
         return realFeel;
     }
 
-    public void setSnow(String snow) {
-        this.snow = snow;
+    public void setSunRise(Date sunRise) {
+        this.sunRise = sunRise;
     }
-    public String getSnow() {
-        return snow;
+    public Date getSunRise() {
+        return sunRise;
+    }
+
+    public void setSunSet(Date sunSet) {
+        this.sunSet = sunSet;
+    }
+    public Date getSunSet() {
+        return sunSet;
     }
 
     public void setTemp(String temp) {
@@ -121,6 +82,13 @@ public class Hourly {
     }
     public String getTemp() {
         return temp;
+    }
+
+    public void setTips(String tips) {
+        this.tips = tips;
+    }
+    public String getTips() {
+        return tips;
     }
 
     public void setUpdatetime(Date updatetime) {
@@ -137,6 +105,13 @@ public class Hourly {
         return uvi;
     }
 
+    public void setVis(String vis) {
+        this.vis = vis;
+    }
+    public String getVis() {
+        return vis;
+    }
+
     public void setWindDegrees(String windDegrees) {
         this.windDegrees = windDegrees;
     }
@@ -151,18 +126,18 @@ public class Hourly {
         return windDir;
     }
 
+    public void setWindLevel(String windLevel) {
+        this.windLevel = windLevel;
+    }
+    public String getWindLevel() {
+        return windLevel;
+    }
+
     public void setWindSpeed(String windSpeed) {
         this.windSpeed = windSpeed;
     }
     public String getWindSpeed() {
         return windSpeed;
-    }
-
-    public void setWindlevel(String windlevel) {
-        this.windlevel = windlevel;
-    }
-    public String getWindlevel() {
-        return windlevel;
     }
 
 }

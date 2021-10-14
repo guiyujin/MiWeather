@@ -1,4 +1,4 @@
-package com.guiyujin.android_lib_base.http.bean.weatherbean.aqi;
+package com.guiyujin.miweather.bean.weatherbean.aqi;
 
 public class Aqi {
 
