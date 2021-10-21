@@ -1,4 +1,4 @@
-package com.guiyujin.miweather.bean.weatherbean.alert;
+package com.guiyujin.miweather.network.bean.weatherbean.alert;
 
 import java.util.Date;
 

@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.guiyujin.miweather.bean.weatherbean.hourlyforecast.Hourly;
+import com.guiyujin.miweather.network.bean.weatherbean.hourlyforecast.Hourly;
 
 import java.util.ArrayList;
 import java.util.List;

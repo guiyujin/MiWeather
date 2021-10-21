@@ -1,4 +1,4 @@
-package com.guiyujin.miweather.bean.weatherbean.aqi;
+package com.guiyujin.miweather.network.bean.weatherbean.aqi;
 
 public class Aqi {
 

@@ -1,4 +1,4 @@
-package com.guiyujin.miweather.bean.weatherbean.shortforecast;
+package com.guiyujin.miweather.network.bean.weatherbean.shortforecast;
 
 /**
  * @ProjectName: Weather

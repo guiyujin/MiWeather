@@ -1,7 +1,7 @@
-package com.guiyujin.miweather.bean.weatherbean.shortforecast;
+package com.guiyujin.miweather.network.bean.weatherbean.shortforecast;
 
 
-import com.guiyujin.miweather.bean.weatherbean.City;
+import com.guiyujin.miweather.network.bean.weatherbean.City;
 
 public class DataShortForecast {
 

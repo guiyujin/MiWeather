@@ -1,13 +1,23 @@
 package com.guiyujin.miweather.main;
 
+import com.guiyujin.android_lib_base.http.NetworkManager;
 import com.guiyujin.android_lib_base.http.NetworkModule;
+import com.guiyujin.android_lib_base.http.bean.BaseResponse;
 import com.guiyujin.android_lib_base.http.rx.RxResponseCompat;
-import com.guiyujin.miweather.bean.weatherbean.condition.DataCondition;
+import com.guiyujin.miweather.network.bean.weatherbean.alert.DataAlert;
+import com.guiyujin.miweather.network.bean.weatherbean.aqi.Aqi;
+import com.guiyujin.miweather.network.bean.weatherbean.aqi.DataAqi;
+import com.guiyujin.miweather.network.bean.weatherbean.condition.DataCondition;
 import com.guiyujin.miweather.network.NetworkService;
+import com.guiyujin.miweather.network.bean.weatherbean.hourlyforecast.DataHourlyForecast;
+import com.guiyujin.miweather.network.bean.weatherbean.longforecast.DataLongForecast;
+import com.guiyujin.miweather.network.bean.weatherbean.shortforecast.DataShortForecast;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import io.reactivex.Observable;
 import io.reactivex.Observer;
 
 import io.reactivex.annotations.NonNull;
@@ -26,7 +36,8 @@ import io.reactivex.disposables.Disposable;
  * @Version: 1.0
  */
 public class MainModelImpl implements MainModelContract.Model{
-    private NetworkModule networkModule = new NetworkModule();
+    private NetworkModule networkModule;
+    private NetworkManager networkManager = NetworkManager.getInstance();
 
     // 可重试次数
     private int maxConnectCount = 3;
@@ -36,147 +47,58 @@ public class MainModelImpl implements MainModelContract.Model{
     private int waitRetryTime = 0;
     private List<Object> response;
 
-    @Override
-    public void getCondition(String path, Map<String, String> bodys, MainModelContract.MainCallBack mainCallBack) throws Exception {
+    public MainModelImpl(){
+        response = new ArrayList<>();
+        networkManager = NetworkManager.getInstance();
+        networkManager.setBaseUrl("https://aliv8.mojicb.com/");
+        networkModule = new NetworkModule();
         networkModule.setBaseUrl("https://aliv8.mojicb.com/");
-        networkModule.provide(NetworkService.class).postCondition(path, bodys)
-                .compose(RxResponseCompat.exceptionTransformer())
-                .compose(RxResponseCompat.compat())
-                .subscribe(new Observer<DataCondition>() {
-                    @Override
-                    public void onSubscribe(@NonNull Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(@NonNull DataCondition dataCondition) {
-                        mainCallBack.onSuccess(dataCondition);
-                    }
-
-                    @Override
-                    public void onError(@NonNull Throwable e) {
-                        mainCallBack.onFailed((Exception) e);
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                });
-
     }
 
     @Override
-    public void getAqi(String path, Map<String, String> bodys, MainModelContract.MainCallBack mainCallBack) throws Exception {
-        networkModule.provide(NetworkService.class).postAqi(path, bodys)
-                .compose(RxResponseCompat.exceptionTransformer())
+    public void get(String[] path, Map<String, String> bodys, MainModelContract.MainCallBack mainCallBack) {
+        Observable<BaseResponse<DataCondition>> condition = networkManager.provide(NetworkService.class).postCondition(path[0], bodys);
+        Observable<BaseResponse<DataAqi>> aqi = networkModule.provide(NetworkService.class).postAqi(path[1], bodys);
+        Observable<BaseResponse<DataShortForecast>> shortForecast = networkModule.provide(NetworkService.class).postShortForecast(path[2], bodys);
+        Observable<BaseResponse<DataLongForecast>> longForecast = networkModule.provide(NetworkService.class).postLongForecast(path[3], bodys);
+        Observable<BaseResponse<DataHourlyForecast>> hours = networkModule.provide(NetworkService.class).postForecast24Hours(path[4], bodys);
+        Observable<Object> merge = Observable.concat(condition, aqi, shortForecast, longForecast);
+        Observable<Object> contact = Observable.concat(merge, hours);
+        contact.compose(RxResponseCompat.exceptionTransformer())
                 .compose(RxResponseCompat.compat())
                 .subscribe(new Observer() {
                     @Override
-                    public void onSubscribe(@NonNull Disposable d) {
+                    public void onSubscribe(@androidx.annotation.NonNull Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(@NonNull Object o) {
-                        mainCallBack.onSuccess(o);
+                    public void onNext(@androidx.annotation.NonNull Object o) {
+                        if (o instanceof DataCondition){
+                            response.add((DataCondition) o);
+                        }else if (o instanceof DataAqi){
+                            response.add((DataAqi) o);
+                        }else if (o instanceof DataShortForecast){
+                            response.add((DataShortForecast) o);
+                        }else if (o instanceof DataLongForecast){
+                            response.add((DataLongForecast) o);
+                        }else if (o instanceof DataHourlyForecast){
+                            response.add((DataHourlyForecast) o);
+                        }
                     }
 
                     @Override
-                    public void onError(@NonNull Throwable e) {
+                    public void onError(@androidx.annotation.NonNull Throwable e) {
                         mainCallBack.onFailed((Exception) e);
                     }
 
                     @Override
                     public void onComplete() {
-
+                        mainCallBack.onSuccessList(response);
                     }
                 });
     }
 
-    @Override
-    public void getShortForecast(String path, Map<String, String> bodys, MainModelContract.MainCallBack mainCallBack) throws Exception {
-        networkModule.provide(NetworkService.class).postShortForecast(path, bodys)
-                .compose(RxResponseCompat.exceptionTransformer())
-                .compose(RxResponseCompat.compat())
-                .subscribe(new Observer() {
-                    @Override
-                    public void onSubscribe(@NonNull Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(@NonNull Object o) {
-                        mainCallBack.onSuccess(o);
-                    }
-
-                    @Override
-                    public void onError(@NonNull Throwable e) {
-                        mainCallBack.onFailed((Exception) e);
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                });
-    }
-
-    @Override
-    public void getLongForecast(String path, Map<String, String> bodys, MainModelContract.MainCallBack mainCallBack) throws Exception {
-        networkModule.provide(NetworkService.class).postLongForecast(path, bodys)
-                .compose(RxResponseCompat.exceptionTransformer())
-                .compose(RxResponseCompat.compat())
-                .subscribe(new Observer() {
-                    @Override
-                    public void onSubscribe(@NonNull Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(@NonNull Object o) {
-                        mainCallBack.onSuccess(o);
-                    }
-
-                    @Override
-                    public void onError(@NonNull Throwable e) {
-                        mainCallBack.onFailed((Exception) e);
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                });
-    }
-
-    @Override
-    public void getHourlyForecast(String path, Map<String, String> bodys, MainModelContract.MainCallBack mainCallBack) throws Exception {
-        networkModule.provide(NetworkService.class).postForecast24Hours(path, bodys)
-                .compose(RxResponseCompat.exceptionTransformer())
-                .compose(RxResponseCompat.compat())
-                .subscribe(new Observer() {
-                    @Override
-                    public void onSubscribe(@NonNull Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(@NonNull Object o) {
-                        mainCallBack.onSuccess(o);
-                    }
-
-                    @Override
-                    public void onError(@NonNull Throwable e) {
-                        mainCallBack.onFailed((Exception) e);
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                });
-    }
 
     //                .retryWhen(new Function<Observable<Throwable>, ObservableSource<?>>() {
 //                    @Override

@@ -1,4 +1,4 @@
-package com.guiyujin.miweather.bean.weatherbean.hourlyforecast;
+package com.guiyujin.miweather.network.bean.weatherbean.hourlyforecast;
 
 import java.util.Date;
 

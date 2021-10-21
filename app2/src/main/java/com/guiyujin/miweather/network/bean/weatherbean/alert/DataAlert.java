@@ -1,9 +1,9 @@
-package com.guiyujin.miweather.bean.weatherbean.alert;
+package com.guiyujin.miweather.network.bean.weatherbean.alert;
 
 
 
 
-import com.guiyujin.miweather.bean.weatherbean.City;
+import com.guiyujin.miweather.network.bean.weatherbean.City;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.guiyujin.miweather.bean.weatherbean;
+package com.guiyujin.miweather.network.bean;
 
 
 public class City {

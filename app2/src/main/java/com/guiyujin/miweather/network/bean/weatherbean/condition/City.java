@@ -1,15 +1,12 @@
-package com.guiyujin.miweather.bean;
+package com.guiyujin.miweather.network.bean.weatherbean.condition;
 
 
 public class City {
 
     private long cityId;
     private String counname;
-    private String ianatimezone;
     private String name;
     private String pname;
-    private String secondaryname;
-    private String timezone;
     public void setCityId(long cityId) {
         this.cityId = cityId;
     }
@@ -22,13 +19,6 @@ public class City {
     }
     public String getCounname() {
         return counname;
-    }
-
-    public void setIanatimezone(String ianatimezone) {
-        this.ianatimezone = ianatimezone;
-    }
-    public String getIanatimezone() {
-        return ianatimezone;
     }
 
     public void setName(String name) {
@@ -45,18 +35,6 @@ public class City {
         return pname;
     }
 
-    public void setSecondaryname(String secondaryname) {
-        this.secondaryname = secondaryname;
-    }
-    public String getSecondaryname() {
-        return secondaryname;
-    }
 
-    public void setTimezone(String timezone) {
-        this.timezone = timezone;
-    }
-    public String getTimezone() {
-        return timezone;
-    }
 
 }

@@ -6,6 +6,7 @@ import com.guiyujin.android_lib_base.base.mvp.BaseModel;
 import com.guiyujin.android_lib_base.base.mvp.BaseView;
 import com.guiyujin.android_lib_base.base.mvp.IPresenter;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -22,18 +23,15 @@ import java.util.Map;
  */
 public interface MainModelContract {
     interface MainCallBack<T> extends ICallBack {
-        void onSuccess(T response);
+        void onSuccessList(List<T> response);
     }
 
     interface Model extends BaseModel {
-        void getCondition(String path, Map<String, String> bodys, MainCallBack mainCallBack) throws Exception;
-        void getAqi(String path, Map<String, String> bodys, MainCallBack mainCallBack) throws Exception;
-        void getShortForecast(String path, Map<String, String> bodys, MainCallBack mainCallBack) throws Exception;
-        void getLongForecast(String path, Map<String, String> bodys, MainCallBack mainCallBack) throws Exception;
-        void getHourlyForecast(String path, Map<String, String> bodys, MainCallBack mainCallBack) throws Exception;
+        void get(String[] path, Map<String, String> bodys, MainCallBack mainCallBack);
     }
 
     interface View<T> extends BaseView {
+        void show(List<T> response);
         void showCondition(T response);
         void showAqi(T response);
         void showShortForecast(T response);

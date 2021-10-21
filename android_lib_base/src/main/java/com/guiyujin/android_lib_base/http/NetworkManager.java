@@ -1,27 +1,56 @@
 package com.guiyujin.android_lib_base.http;
 
-
-
-
-
-import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.guiyujin.android_lib_base.http.converterfactory.CustomGsonConverterFactory;
 import com.guiyujin.android_lib_base.http.interceptor.CommonRequestInterceptor;
 
+import java.io.ObjectStreamException;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
-import dagger.Module;
-import dagger.Provides;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-@Module
-public class NetworkModule {
+/**
+ * @ProjectName: MiWeather
+ * @Package: com.guiyujin.android_lib_base.http
+ * @ClassName: NetorkManager
+ * @Description: java类作用描述
+ * @Author: 归余烬
+ * @CreateDate: 2021/10/14 17:03
+ * @UpdateUser: 更新者：
+ * @UpdateDate: 2021/10/14 17:03
+ * @UpdateRemark: 更新说明：
+ * @Version: 1.0
+ */
+public class NetworkManager {
+    private volatile static NetworkManager mInstance;
+
+    private NetworkManager(){
+        init();
+    }
+
+    private void init() {
+        baseUrl = new StringBuffer();
+    }
+
+    public static NetworkManager getInstance(){
+        if (mInstance == null){
+            synchronized (NetworkManager.class){
+                if(mInstance == null){
+                    mInstance =  new NetworkManager();
+                }
+            }
+        }
+        return mInstance;
+    }
+
+    private Object readResolve()  throws ObjectStreamException {
+        return mInstance;
+    }
+
     private StringBuffer baseUrl;
     private Retrofit retrofit;
     private OkHttpClient okHttpClient;
@@ -37,15 +66,6 @@ public class NetworkModule {
 
     public void setOkHttpClient(OkHttpClient okHttpClient) {
         this.okHttpClient = okHttpClient;
-    }
-
-    @Inject
-    public NetworkModule() {
-        init();
-    }
-
-    private void init() {
-        baseUrl = new StringBuffer();
     }
 
     public <T> T provide(Class<T> apiClass){
@@ -80,6 +100,4 @@ public class NetworkModule {
                 .addInterceptor(new CommonRequestInterceptor());
         return builder.build();
     }
-
-
 }

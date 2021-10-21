@@ -53,8 +53,7 @@ public class RxResponseCompat {
         return new ObservableTransformer() {
             @Override
             public ObservableSource apply(Observable observable) {
-                return observable
-                        .onErrorResumeNext(new HttpResponseFunc());
+                return observable.onErrorResumeNext(new HttpResponseFunc());
             }
         };
     }

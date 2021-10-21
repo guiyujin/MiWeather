@@ -18,6 +18,7 @@ public class CommonRequestInterceptor implements Interceptor {
     @Override
     public Response intercept(Chain chain) throws IOException {
         if (appcode == null){
+            appcode = new StringBuffer();
             setAppcode("ab11b8e3aa2c4920ad02c0b66fe9b908");
         }
         Request.Builder builder = chain.request().newBuilder();

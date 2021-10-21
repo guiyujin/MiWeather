@@ -3,12 +3,12 @@ package com.guiyujin.miweather.network;
 
 
 import com.guiyujin.android_lib_base.http.bean.BaseResponse;
-import com.guiyujin.miweather.bean.weatherbean.alert.DataAlert;
-import com.guiyujin.miweather.bean.weatherbean.aqi.DataAqi;
-import com.guiyujin.miweather.bean.weatherbean.condition.DataCondition;
-import com.guiyujin.miweather.bean.weatherbean.hourlyforecast.DataHourlyForecast;
-import com.guiyujin.miweather.bean.weatherbean.longforecast.DataLongForecast;
-import com.guiyujin.miweather.bean.weatherbean.shortforecast.DataShortForecast;
+import com.guiyujin.miweather.network.bean.weatherbean.alert.DataAlert;
+import com.guiyujin.miweather.network.bean.weatherbean.aqi.DataAqi;
+import com.guiyujin.miweather.network.bean.weatherbean.condition.DataCondition;
+import com.guiyujin.miweather.network.bean.weatherbean.hourlyforecast.DataHourlyForecast;
+import com.guiyujin.miweather.network.bean.weatherbean.longforecast.DataLongForecast;
+import com.guiyujin.miweather.network.bean.weatherbean.shortforecast.DataShortForecast;
 
 
 import java.util.Map;

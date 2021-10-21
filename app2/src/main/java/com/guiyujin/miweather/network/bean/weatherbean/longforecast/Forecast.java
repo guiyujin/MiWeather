@@ -1,4 +1,4 @@
-package com.guiyujin.miweather.bean.weatherbean.longforecast;
+package com.guiyujin.miweather.network.bean.weatherbean.longforecast;
 
 
 import java.util.Date;

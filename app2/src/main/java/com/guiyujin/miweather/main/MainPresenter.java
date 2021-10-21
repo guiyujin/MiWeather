@@ -2,6 +2,7 @@ package com.guiyujin.miweather.main;
 
 import com.guiyujin.android_lib_base.base.mvp.BasePresenter;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -22,89 +23,21 @@ public class MainPresenter  extends BasePresenter<MainModelContract.View, MainMo
     @Override
     public void getCondition(String[] path, Map<String, String> bodys) throws Exception {
         mView.onLoading();
-        mModel.getCondition(path[0], bodys, new MainModelContract.MainCallBack() {
+        mModel.get(path, bodys, new MainModelContract.MainCallBack() {
             @Override
-            public void onSuccess(Object response) {
-//                mView.disLoading();
-                if (response != null){
-                    mView.showCondition(response);
-                }else {
-                    mView.getNull();
-                }
-            }
-
-            @Override
-            public void onFailed(Exception e) {
-//                mView.disLoading();
-                mView.onFailed(e);
-            }
-        });
-        mModel.getAqi(path[1], bodys, new MainModelContract.MainCallBack() {
-            @Override
-            public void onSuccess(Object response) {
-//                mView.disLoading();
-                if (response != null){
-                    mView.showAqi(response);
-                }else {
-                    mView.getNull();
-                }
-            }
-
-            @Override
-            public void onFailed(Exception e) {
-                mView.disLoading();
-                mView.onFailed(e);
-            }
-        });
-        mModel.getShortForecast(path[2], bodys, new MainModelContract.MainCallBack() {
-            @Override
-            public void onSuccess(Object response) {
-//                mView.disLoading();
-                if (response != null){
-                    mView.showShortForecast(response);
-                }else {
-                    mView.getNull();
-                }
-            }
-
-            @Override
-            public void onFailed(Exception e) {
-//                mView.disLoading();
-                mView.onFailed(e);
-            }
-        });
-        mModel.getLongForecast(path[3], bodys, new MainModelContract.MainCallBack() {
-            @Override
-            public void onSuccess(Object response) {
-//                mView.disLoading();
-                if (response != null){
-                    mView.showLongForecast(response);
-                }else {
-                    mView.getNull();
-                }
-            }
-
-            @Override
-            public void onFailed(Exception e) {
-//                mView.disLoading();
-                mView.onFailed(e);
-            }
-        });
-        mModel.getHourlyForecast(path[4], bodys, new MainModelContract.MainCallBack() {
-            @Override
-            public void onSuccess(Object response) {
+            public void onSuccessList(List response) {
                 mView.disLoading();
                 if (response != null){
-                    mView.showHourlyForecast(response);
+                    mView.show(response);
                 }else {
                     mView.getNull();
                 }
             }
 
             @Override
-            public void onFailed(Exception e) {
+            public void onFailed(Exception exception) {
                 mView.disLoading();
-                mView.onFailed(e);
+                mView.onFailed(exception);
             }
         });
     }

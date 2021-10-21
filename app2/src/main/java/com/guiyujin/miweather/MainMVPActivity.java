@@ -18,13 +18,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.guiyujin.android_lib_base.base.mvp.BaseMVPActivity;
-import com.guiyujin.miweather.bean.weatherbean.alert.DataAlert;
-import com.guiyujin.miweather.bean.weatherbean.aqi.DataAqi;
-import com.guiyujin.miweather.bean.weatherbean.condition.DataCondition;
-import com.guiyujin.miweather.bean.weatherbean.hourlyforecast.DataHourlyForecast;
-import com.guiyujin.miweather.bean.weatherbean.hourlyforecast.Hourly;
-import com.guiyujin.miweather.bean.weatherbean.longforecast.DataLongForecast;
-import com.guiyujin.miweather.bean.weatherbean.shortforecast.DataShortForecast;
+import com.guiyujin.miweather.network.bean.weatherbean.aqi.DataAqi;
+import com.guiyujin.miweather.network.bean.weatherbean.condition.DataCondition;
+import com.guiyujin.miweather.network.bean.weatherbean.hourlyforecast.DataHourlyForecast;
+import com.guiyujin.miweather.network.bean.weatherbean.hourlyforecast.Hourly;
+import com.guiyujin.miweather.network.bean.weatherbean.longforecast.DataLongForecast;
+import com.guiyujin.miweather.network.bean.weatherbean.shortforecast.DataShortForecast;
 import com.guiyujin.android_lib_base.http.exception.NetworkException;
 import com.guiyujin.android_lib_base.utils.LocationUtils;
 import com.guiyujin.miweather.main.MainModelContract;
@@ -208,9 +207,16 @@ public class MainMVPActivity extends BaseMVPActivity<MainPresenter, MainModelImp
     }
 
     @Override
+    public void show(List response) {
+        showCondition(response.get(0));
+        showAqi(response.get(1));
+        showShortForecast(response.get(2));
+        showLongForecast(response.get(3));
+        showHourlyForecast(response.get(4));
+    }
+
+    @Override
     public void showCondition(Object response) {
-
-
         DataCondition condition = (DataCondition) response;
         tv_title.setText(condition.getCity().getPname() + " " + condition.getCity().getName());
         String cond = condition.getCondition().getCondition();

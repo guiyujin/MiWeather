@@ -1,6 +1,6 @@
-package com.guiyujin.miweather.bean.weatherbean.hourlyforecast;
+package com.guiyujin.miweather.network.bean.weatherbean.hourlyforecast;
 
-import com.guiyujin.miweather.bean.weatherbean.City;
+import com.guiyujin.miweather.network.bean.weatherbean.City;
 
 import java.util.List;
 

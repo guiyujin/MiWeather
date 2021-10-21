@@ -1,4 +1,4 @@
-package com.guiyujin.miweather.bean.weatherbean.condition;
+package com.guiyujin.miweather.network.bean.weatherbean.condition;
 import java.util.Date;
 
 

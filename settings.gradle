@@ -2,3 +2,4 @@ rootProject.name = "MiWeather"
 
 include ':android_lib_base'
 include ':app2'
+

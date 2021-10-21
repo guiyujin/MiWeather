@@ -1,7 +1,7 @@
-package com.guiyujin.miweather.bean.weatherbean.aqi;
+package com.guiyujin.miweather.network.bean.weatherbean.aqi;
 
 
-import com.guiyujin.miweather.bean.weatherbean.City;
+import com.guiyujin.miweather.network.bean.weatherbean.City;
 
 /**
  * Auto-generated: 2021-09-03 15:1:25
