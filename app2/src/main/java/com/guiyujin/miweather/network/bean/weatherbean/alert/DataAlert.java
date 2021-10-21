@@ -1,25 +1,20 @@
 package com.guiyujin.miweather.network.bean.weatherbean.alert;
 
 
-
-
 import com.guiyujin.miweather.network.bean.weatherbean.City;
 
 import java.util.List;
 
-/**
- * Auto-generated: 2021-09-03 15:6:43
- *
- * @author json.cn (i@json.cn)
- * @website http://www.json.cn/java2pojo/
- */
+
 public class DataAlert {
 
     private List<Alert> alert;
     private City city;
+
     public void setAlert(List<Alert> alert) {
         this.alert = alert;
     }
+
     public List<Alert> getAlert() {
         return alert;
     }
@@ -27,6 +22,7 @@ public class DataAlert {
     public void setCity(City city) {
         this.city = city;
     }
+
     public City getCity() {
         return city;
     }
